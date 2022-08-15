@@ -1,17 +1,20 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> List[int]:
-        d={}
+        xor=0
+        for i in range(len(nums)):
+            xor^=nums[i]
+        x1=0
+        x2=0
+        bit=0
+        i=0
+        while(xor&(1<<i)==0):
+            bit+=1
+            i+=1
         for item in nums:
-            if(item in d):
-                d[item]+=1
+            if(item&(1<<bit)==0):
+                x1^=item
             else:
-                d[item]=1
-        ans=[None,None]
-        for item in d:
-            if(d[item]==1):
-                if(ans[0]==None):
-                    ans[0]=item
-                else:
-                    ans[1]=item
-                    return ans
+                x2^=item
+        return x1,x2
+        
         

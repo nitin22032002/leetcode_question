@@ -4,7 +4,7 @@ class Solution:
         step=0
         while(i<len(data)):
             j=7
-            while(j>=0 and (1<<j)&data[i]!=0):
+            while(j>=0 and (1<<j)&data[i]!=0 and (7-j)<=4):
                 j-=1
             s=(7-j)
             # print(s,data[i])

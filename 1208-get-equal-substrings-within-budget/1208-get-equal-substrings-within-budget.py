@@ -2,7 +2,6 @@ class Solution:
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
         def findValue(a,b):
             return abs(ord(a)-ord(b))
-        arr=[findValue(s[i],t[i]) for i in range(len(s))]
         ans=0
         cost=0
         i=0
@@ -10,10 +9,10 @@ class Solution:
         while(j<len(s)):
             if(cost<=maxCost):
                 ans=max(ans,j-i)
-                cost+=arr[j]
+                cost+=findValue(s[j],t[j])
                 j+=1
             else:
-                cost-=arr[i]
+                cost-=findValue(s[i],t[i])
                 i+=1
         if(cost<=maxCost):
             ans=max(ans,j-i)

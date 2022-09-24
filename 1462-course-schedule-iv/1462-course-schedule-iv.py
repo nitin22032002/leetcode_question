@@ -1,4 +1,3 @@
-from numpy import array
 class Solution:
     def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
         graph=[[0 for _ in range(numCourses)] for __ in range(numCourses)]

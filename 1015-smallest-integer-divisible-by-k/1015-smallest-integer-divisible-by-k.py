@@ -5,10 +5,10 @@ class Solution:
         else:
             x=len((str(k)))
             n=int(x*"1")
-            s=set()
+            arr=[False for _ in range(k)]
             count=x
-            while(n%k!=0 and n%k not in s):
-                s.add(n%k)
+            while(n%k!=0 and not arr[n%k]):
+                arr[n%k]=True
                 # print(n%k)
                 n*=10
                 n+=1

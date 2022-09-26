@@ -3,11 +3,13 @@ class Solution:
         if(k%2==0):
             return -1
         else:
-            n=1
+            x=len((str(k)))
+            n=int(x*"1")
             s=set()
-            count=1
+            count=x
             while(n%k!=0 and n%k not in s):
                 s.add(n%k)
+                # print(n%k)
                 n*=10
                 n+=1
                 count+=1

@@ -11,12 +11,10 @@ class Solution:
                 bit|=b
             else:
                 t.append([bit,item])
-        return self.get(t,0,0,{})
-    def get(self,arr,i,bit,dp):
+        return self.get(t,0,0)
+    def get(self,arr,i,bit):
         if(i>=len(arr)):
             return 0
-        elif((i,bit) in dp):
-            return dp[(i,bit)]
         else:
             can_take=True
             for j in range(26):
@@ -26,7 +24,7 @@ class Solution:
                     break
             ans=0
             if(can_take):
-                ans=self.get(arr,i+1,bit|arr[i][0],dp)+len(arr[i][1])
-            ans=max(ans,self.get(arr,i+1,bit,dp))
+                ans=self.get(arr,i+1,bit|arr[i][0])+len(arr[i][1])
+            ans=max(ans,self.get(arr,i+1,bit))
             return ans
             

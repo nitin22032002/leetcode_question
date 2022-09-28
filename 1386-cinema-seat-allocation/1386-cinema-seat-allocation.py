@@ -4,8 +4,9 @@ class Solution:
         for item in reservedSeats:
             r,c=item
             if(r not in d):
-                d[r]=[False for _ in range(10)]
-            d[r][c-1]=True
+                d[r]=0
+            b=1<<(c)
+            d[r]|=b
         left=n-len(d)
         ans=2*left
         # print(ans)
@@ -17,11 +18,12 @@ class Solution:
                 status=True
                 a=val[0]
                 while(a<=val[1]):
-                    if(col[a-1]):
+                    b=1<<a
+                    if(col&b!=0):
                         status=False
                         break
                     else:
-                        col[a-1]=True
+                        col|=b
                     a+=1
                 if(status):
                     # print(item,val)
@@ -29,7 +31,8 @@ class Solution:
                 else:
                     b=val[0]
                     while(b<a):
-                        col[b-1]=False
+                        c=1<<b
+                        col^=c
                         b+=1
         return ans
                     

@@ -3,26 +3,28 @@ class Solution:
         j=self.upperBound(arr,x)
         i=self.lowerBound(arr,x)
         # print(i,j)
-        ans=[]
+        a1=[]
+        a2=[]
         while(k>0):
             if(i>=0 and j<len(arr)):
                 d1=x-arr[i]
                 d2=arr[j]-x
                 if(d1<=d2):
-                    ans.append(arr[i])
+                    a1.append(arr[i])
                     i-=1
                 else:
-                    ans.append(arr[j])
+                    a2.append(arr[j])
                     j+=1
             elif(i>=0):
-                ans.append(arr[i])
+                a1.append(arr[i])
                 i-=1
             else:
-                ans.append(arr[j])
+                a2.append(arr[j])
                 j+=1
             k-=1
-        ans.sort()
-        return ans
+        
+        a1.reverse()
+        return a1+a2
     def upperBound(self,arr,target):
         start=0
         end=len(arr)-1

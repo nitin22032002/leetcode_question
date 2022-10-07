@@ -8,10 +8,9 @@ public:
         }
         int i=0;
         int j=indexDiff+1;
-        while(i<nums.size()){
+        while(i<nums.size()-1){
             d.erase(d.find(nums[i])); 
             auto itr=d.lower_bound(valueDiff+nums[i]);
-            // cout<<*itr<<endl;
             if(*itr==(valueDiff+nums[i])){
                 return true;
             }
@@ -23,9 +22,41 @@ public:
                     d.insert(nums[j]);
                     j+=1;
                 }
-                i+=1;
             }
+                i+=1;
         }
         return false;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

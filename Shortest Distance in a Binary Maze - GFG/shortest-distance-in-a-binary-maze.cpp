@@ -14,7 +14,6 @@ class Solution {
                      pair<int, int> destination) {
         queue<pair<int,pair<int,int>>> d;
         d.push({0,source});
-        vector<vector<bool>> visited(grid.size(),vector<bool>(grid[0].size(),false));
         while(!d.empty()){
             auto top=d.front();
             d.pop();
@@ -24,11 +23,11 @@ class Solution {
             if(i==destination.first && j==destination.second){
                 return cost;
             }
-            else if(i>=grid.size() || j>=grid[0].size() || i<0 || j<0 || visited[i][j] || grid[i][j]==0){
+            else if(i>=grid.size() || j>=grid[0].size() || i<0 || j<0 || grid[i][j]==0){
                 continue;
             }
             else{
-                visited[i][j]=true;
+                grid[i][j]=0;
                 d.push({cost+1,{i+1,j}});
                 d.push({cost+1,{i,j+1}});
                 d.push({cost+1,{i-1,j}});

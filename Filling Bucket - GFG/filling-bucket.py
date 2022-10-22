@@ -2,13 +2,14 @@
 
 class Solution:
     def fillingBucket(self, N):
-        dp=[-1 for _ in range(N+1)]
-        dp[0]=1
-        dp[1]=1
+        a=0
+        b=1
         mod=10**8
-        for i in range(2,N+1):
-            dp[i]=(dp[i-1]+dp[i-2])%(mod)
-        return dp[N]
+        for i in range(1,N+1):
+            t=(a+b)%(mod)
+            a=b
+            b=t
+        return b
 
 
 #{ 

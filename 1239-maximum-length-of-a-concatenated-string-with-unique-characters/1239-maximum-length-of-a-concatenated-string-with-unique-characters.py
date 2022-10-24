@@ -1,30 +1,22 @@
 class Solution:
     def maxLength(self, arr: List[str]) -> int:
-        t=[]
-        for item in arr:
-            bit=0
-            for ch in item:
-                j=ord(ch)-97
-                b=1<<j
-                if(b&bit!=0):
-                    break
-                bit|=b
-            else:
-                t.append([bit,item])
-        return self.get(t,0,0)
+        
+        return self.get(arr,0,0)
     def get(self,arr,i,bit):
         if(i>=len(arr)):
             return 0
         else:
             can_take=True
-            for j in range(26):
-                b=1<<j
-                if(bit&b!=0 and arr[i][0]&b!=0):
+            tem=0
+            for item in arr[i]:
+                b=1<<(ord(item)-97)
+                if(bit&b!=0 or tem&b!=0):
                     can_take=False
                     break
+                tem|=b
             ans=0
             if(can_take):
-                ans=self.get(arr,i+1,bit|arr[i][0])+len(arr[i][1])
+                ans=self.get(arr,i+1,bit|tem)+len(arr[i])
             ans=max(ans,self.get(arr,i+1,bit))
             return ans
             

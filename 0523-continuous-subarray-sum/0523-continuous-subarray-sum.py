@@ -5,11 +5,10 @@ class Solution:
         for i,item in enumerate(nums):
             s+=item
             # print(s)
-            if(i-d.get(s%k,i)>=2):
-                return True
-            elif(i!=0 and s%k==0):
-                return True
-            elif(s%k not in d):
+            if(s%k in d):
+                if(i-d[s%k]>=2):
+                    return True
+            else:
                 d[s%k]=i
         return False
         

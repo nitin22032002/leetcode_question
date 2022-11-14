@@ -4,19 +4,14 @@ class Solution:
     
     #Function to return max value that can be put in knapsack of capacity W.
     def knapSack(self,W, wt, val, n):
-        dp=[[-1 for _ in range(W+1)] for __ in range(n)]
-        return self.get(W,wt,val,0,dp)
-    def get(self,w,wt,val,i,dp):
-        if(i>=len(wt)):
-            return 0
-        elif(dp[i][w]==-1):
-            ans=0
-            if(wt[i]<=w):
-                ans=(val[i]+self.get(w-wt[i],wt,val,i+1,dp))
-            ans=max(ans,self.get(w,wt,val,i+1,dp))
-            dp[i][w]=ans
-        return dp[i][w]
-
+        dp=[[0 for _ in range(n+1)] for __ in range(W+1)]
+        for i in range(1,W+1):
+            cost=0
+            for j in range(1,n+1):
+                if(wt[j-1]<=i):
+                    cost=max(cost,(val[j-1]+dp[i-wt[j-1]][j-1]))
+                dp[i][j]=cost
+        return dp[W][n]
 
 #{ 
  # Driver Code Starts

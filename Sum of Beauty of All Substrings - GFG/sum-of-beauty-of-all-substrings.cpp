@@ -8,19 +8,32 @@ using namespace std;
 
 class Solution {
   public:
+    int findMin(vector<int> &arr){
+        int ans=INT_MAX;
+        for(auto &val:arr){
+            if(val!=0)
+                ans=min(ans,val);
+        }
+        return ans;
+    }
     int beautySum(string s) {
        
        int ans=0;
        for(int i=0;i<s.size();i++){
            vector<int> r(26,0);
-           multiset<int> d;
+           int mi=INT_MAX;
+           int ma=INT_MIN;
            for(int j=i;j<s.size();j++){
-               if(r[s[j]-97]!=0){
-                   d.erase(d.find(r[s[j]-97]));
-               }
+               
                r[s[j]-97]+=1;
-               d.insert(r[s[j]-97]);
-               ans+=((*(--d.end()))-(*d.begin()));
+               ma=max(ma,r[s[j]-97]);
+               if(mi==r[s[j]-97]-1){
+                   mi=findMin(r);
+               }
+               else{
+                   mi=min(mi,r[s[j]-97]);
+               }
+               ans+=(ma-mi);
            }
        }
        return ans;

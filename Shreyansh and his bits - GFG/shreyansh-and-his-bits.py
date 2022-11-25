@@ -7,7 +7,6 @@ class Solution:
             c+=(N%2)
             N//=2
         arr.reverse()
-        # print(arr)
         ans=self.get(arr,0,c)
         return ans-1
     def get(self,arr,i,c):
@@ -20,12 +19,10 @@ class Solution:
             ans+=self.get(arr,i+1,c-1)
             return ans
     def factorial(self,n):
-        # print(n)
         ans=1
         for i in range(1,n+1):
             ans*=i
-        return ans
-        
+        return ans 
 
 
 

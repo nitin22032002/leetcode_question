@@ -17,7 +17,6 @@ class Solution:
             start=not start
         for i in range(len(arr)):
             arr[i]=ans[i]
-        
 
 
 #{ 

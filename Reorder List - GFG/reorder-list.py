@@ -66,7 +66,6 @@ class Solution:
             if(q):
                 q=q.next
         return p
-                
 
 
 #{ 

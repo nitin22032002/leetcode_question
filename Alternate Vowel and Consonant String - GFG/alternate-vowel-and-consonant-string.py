@@ -5,30 +5,42 @@ class Solution:
         if(N==1):
             return S
         vowel={'a','e','i','o','u'}
-        v=[]
-        c=[]
+        v=[0 for _ in range(26)]
+        c=[0 for _ in range(26)]
+        r1=0
         for item in S:
+            j=ord(item)-97
             if(item in vowel):
-                v.append(item)
+                v[j]+=1
+                r1+=1
             else:
-                c.append(item)
-        v.sort()
-        c.sort()
-        if(abs(len(v)-len(c))>1):
+                c[j]+=1
+        r2=N-r1
+        if(abs(r1-r2)>1):
             return -1
-        start=True
-        if(len(v)>len(c) or (len(v)==len(c) and v[0]<c[0])):
-            start=False
         i=0
         j=0
+        while(i<len(v) and v[i]==0):
+            i+=1
+        while(j<len(c) and c[j]==0):
+            j+=1
+        start=True
+        if(r1>r2 or (r1==r2 and i<j)):
+            start=False
         ans=[]
         while(i<len(v) or j<len(c)):
-            if(start):
-                ans.append(c[j])
-                j+=1
-            else:
-                ans.append(v[i])
-                i+=1
+            if(start and j<len(c)):
+                if(c[j]==0):
+                    j+=1
+                    continue
+                ans.append(chr(j+97))
+                c[j]-=1
+            elif(not start and i<len(v)):
+                if(v[i]==0):
+                    i+=1
+                    continue
+                ans.append(chr(i+97))
+                v[i]-=1
             start=not start
         return "".join(ans)
             

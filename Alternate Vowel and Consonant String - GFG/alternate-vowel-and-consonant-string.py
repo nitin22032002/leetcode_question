@@ -43,7 +43,6 @@ class Solution:
                 v[i]-=1
             start=not start
         return "".join(ans)
-            
         
 
 

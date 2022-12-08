@@ -2,7 +2,7 @@
 from bisect import bisect_left
 class Solution:
 	def threeDivisors(self, query, q):
-	    m=max(query)
+		m=max(query)
 	    dp=[False for _ in range(int(pow(m,0.5))+1)]
 	    dp[0]=True
 	    dp[1]=True
@@ -24,6 +24,7 @@ class Solution:
             else:
                 ans.append(j+1)
         return ans
+
 
 #{ 
  # Driver Code Starts

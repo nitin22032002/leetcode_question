@@ -24,7 +24,6 @@ class Solution:
         if(len(stack)==0):
             return "0"
         return "".join(stack)
-            
 
 
 #{ 

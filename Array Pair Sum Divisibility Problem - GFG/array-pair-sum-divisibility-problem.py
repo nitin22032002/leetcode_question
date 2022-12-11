@@ -1,8 +1,7 @@
 #User function Template for python3
 
 class Solution:
-	def canPair(self, nums, k):
-		
+	def canPair(self, nuns, k):
 		d=[0 for _ in range(k)]
 		for item in nums:
 		    d[item%k]+=1

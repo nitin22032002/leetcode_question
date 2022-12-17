@@ -7,6 +7,7 @@ class Solution:
         ans%=((10**9)+7)
         return ans
 
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

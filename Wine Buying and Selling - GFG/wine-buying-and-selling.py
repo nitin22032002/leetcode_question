@@ -3,7 +3,7 @@
 
 class Solution:	
 	def wineSelling(self, Arr, N):
-	    arr1=[]
+		arr1=[]
 	    arr2=[]
 	    for i in range(N):
 	        if(Arr[i]>0):
@@ -31,7 +31,7 @@ class Solution:
 	            x*=arr1[i][0]
 	            arr1[i][0]=0
 	        cost+=x
-	    return cost    
+	    return cost 
 
 
 #{ 

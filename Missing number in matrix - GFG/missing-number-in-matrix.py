@@ -2,7 +2,7 @@
 
 class Solution:
 	def MissingNo(self, matrix):
-	    nonZero=-1
+		nonZero=-1
 	    zero=-1
 	    for i in range(len(matrix)):
 	        s=0
@@ -69,6 +69,8 @@ class Solution:
         if(zero>=nonZero):
             return -1
         return nonZero-zero
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

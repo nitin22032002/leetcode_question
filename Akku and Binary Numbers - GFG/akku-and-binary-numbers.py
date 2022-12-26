@@ -16,6 +16,9 @@ class Solution:
                     b3=1<<k
                     self.dp.append(b1|b2|b3)
         self.dp.sort()
+        
+
+
 
 #{ 
  # Driver Code Starts

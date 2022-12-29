@@ -18,7 +18,6 @@ class Solution:
                 else:
                     stack.append(asteroids[i])
         return stack
-                    
 
 
 #{ 

@@ -11,7 +11,7 @@ using namespace std;
 class Solution {
   public:
     int minLaptops(int N, int start[], int end[]) {
-        vector<pair<int,int>> arr;
+       vector<pair<int,int>> arr;
         for(int i=0;i<N;i++){
             arr.push_back({start[i],end[i]});
         }

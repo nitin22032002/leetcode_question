@@ -2,9 +2,19 @@
 from math import factorial
 class Solution:
 	def compute_value(self, n):
-		r=factorial(2*n)//(factorial(n)**2)
-		r%=((10**9)+7)
-		return (r)
+		r1=1
+		r2=1
+		mod=(10**9)+7
+		for i in range(1,2*n+1):
+		    r1*=i
+		    r1%=mod
+		    if(i<=n):
+		        r2*=i
+		        r2%=mod
+		
+		r2=pow(r2,2,mod)
+		r2=pow(r2,mod-2,mod)
+		return (r1*r2)%mod
 
 
 #{ 

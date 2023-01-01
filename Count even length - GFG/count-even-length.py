@@ -1,5 +1,5 @@
 #User function Template for python3
-from math import factorial
+
 class Solution:
 	def compute_value(self, n):
 		r1=1

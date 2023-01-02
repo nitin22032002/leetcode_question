@@ -12,19 +12,13 @@ class Solution:
                 if(not obj):return ans
         return ans
     def get(self,board,i,j,obj,ans):
-        # print(obj.child,(i,j))
         if(obj.isEnd):
-            # print(obj.val)
             ans.append(obj.val)
             obj.isEnd=False
             if(len(obj.child)==0):
                 return None
-        else:
-            pass
         if(i>=len(board) or j>=len(board[0]) or i<0 or j<0 or board[i][j]=="1" or not obj):
             return obj
-        # print(obj.val,board[i][j])
-        
         if(not obj.child.get(board[i][j],None)):
             return obj
         else:

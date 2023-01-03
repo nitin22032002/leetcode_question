@@ -1,5 +1,5 @@
 #User function Template for python3
-from bisect import bisect_left,bisect_right
+from bisect import bisect_left
 class Solution:
     def removeStudents(self, H, N):
         arr=[]
@@ -10,7 +10,6 @@ class Solution:
                 j=bisect_left(arr,H[i])
                 arr[j]=H[i]
         return N-len(arr)
-            
 
 
 #{ 

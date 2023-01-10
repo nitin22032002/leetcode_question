@@ -1,5 +1,5 @@
 # User function Template for Python3
-from queue import PriorityQueue
+from queue import Queue
 class Solution:
     def minThrow(self, N, arr):
         d={}
@@ -7,7 +7,7 @@ class Solution:
         while(i<len(arr)):
             d[arr[i]]=arr[i+1]
             i+=2
-        obj=PriorityQueue()
+        obj=Queue()
         obj.put([0,1])
         visited=[-1 for _ in range(31)]
         visited[1]=0

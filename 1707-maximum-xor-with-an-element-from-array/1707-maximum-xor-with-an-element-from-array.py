@@ -1,38 +1,40 @@
-class Trie:
-    def __init__(self):
-        self.root = {}
-        
-    def insert(self, num):
-        p = self.root
-        for i in range(31, -1, -1):
-            cur = (num >> i) & 1
-            if cur not in p:
-                p[cur] = {}
-            p = p[cur]
-                
-    def query(self, num):
-        if not self.root: 
-            return -1
-        p, ans = self.root, 0
-        for i in range(31, -1, -1):
-            cur = (num >> i) & 1
-            if 1 - cur in p:
-                p = p[1 - cur]
-                ans |= (1 << i)
-            else:
-                p = p[cur]
-        return ans
-
 class Solution:
     def maximizeXor(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+        obj=Trie()
         nums.sort()
-        queries = sorted(enumerate(queries), key=lambda x: x[1][1])
-        trie = Trie()
-        ans = [-1] * len(queries)
-        j = 0
-        for i, (x, m) in queries:
-            while j < len(nums) and nums[j] <= m:
-                trie.insert(nums[j])
-                j += 1
-            ans[i] = trie.query(x)
+        queries=sorted(enumerate(queries),key=lambda x:x[1][1])
+        ans=[-1 for _ in range(len(queries))]
+        i=0
+        j=0
+        while(j<len(queries)):
+            if(i<len(nums) and nums[i]<=queries[j][1][1]):
+                obj.insert(nums[i])
+                i+=1
+            else:
+                if(i!=0):
+                    ans[queries[j][0]]=obj.search(queries[j][1][0])
+                j+=1
         return ans
+class Trie:
+    def __init__(self):
+        self.child={}
+    def insert(self,num):
+        tem=self.child
+        for i in range(31,-1,-1):
+            j=(num>>i)&1
+            if(j not in tem):
+                tem[j]={}
+            tem=tem[j]
+    def search(self,num):
+        ans=0
+        tem=self.child
+        for i in range(31,-1,-1):
+            t=(num>>i)&1
+            # print(t,i,tem)
+            if(tem.get(1-t,None)!=None):
+                ans|=(1<<i)
+                tem=tem[1-t]
+            else:
+                tem=tem[t]
+        return ans
+                

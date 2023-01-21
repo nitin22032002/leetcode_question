@@ -23,7 +23,7 @@ class Solution:
                 c-=1
             i+=1
         return ans
-                
+
 
 #{ 
  # Driver Code Starts

@@ -4,7 +4,6 @@ from typing import List
 class Solution:
     def solve(self, N : int, K : int, arr : List[int]) -> int:
         s=sum(arr)
-        # s=int(1e9)
         vals=[]
         i=1
         while(i*i<=s):
@@ -30,7 +29,7 @@ class Solution:
             if(s%item==0 and K==1):
                 return True
             return False
-                
+        
 
 
 

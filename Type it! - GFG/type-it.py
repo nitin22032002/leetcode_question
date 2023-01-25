@@ -14,7 +14,6 @@ class Solution:
                 # print(i)
                 ans=min(ans,i+2+len(s)-2*(i+1))
         return ans
-                
 
 
 

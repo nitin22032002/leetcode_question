@@ -2,7 +2,7 @@
 
 class Solution:
 	def CountWays(self, str):
-	    dp=[-1 for _ in range(len(str))]
+		dp=[-1 for _ in range(len(str))]
 	    return self.get(str,0,dp)
 	def get(self,s,i,dp):
 	    if(i>=len(s)):

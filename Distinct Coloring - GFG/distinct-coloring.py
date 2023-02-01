@@ -2,15 +2,12 @@
 
 class Solution:
     def distinctColoring (self, N, r, g, b):
-        red=r[0]
-        green=g[0]
-        blue=b[0]
+        red,green,blue=r[0],g[0],b[0]
         for i in range(1,N):
-            a1=min(green,blue)+r[i]
-            a2=min(red,blue)+g[i]
-            a3=min(red,green)+b[i]
-            red,green,blue=a1,a2,a3
-        return min(red,green,blue)
+            red,green,blue=min(green,blue)+r[i],min(red,blue)+g[i],min(red,green)+b[i]
+        return min(red,green,blue) 
+        
+        
 
 
 #{ 

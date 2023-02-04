@@ -2,13 +2,14 @@
 class Solution:
 	
 	def findMaxSum(self,arr, n):
-		dp=[0 for _ in range(n)]
-		dp[0]=arr[0]
+		a=arr[0]
+		b=a
 		if(n>1):
-		    dp[1]=max(arr[1],dp[0])
+		    b=max(arr[1],a)
 		for i in range(2,n):
-		    dp[i]=max(dp[i-2]+arr[i],dp[i-1])
-		return dp[-1]
+		    c=max(a+arr[i],b)
+		    a,b=b,c
+		return b
 
 
 #{ 

@@ -18,7 +18,6 @@ class Solution:
         if(root):
             if(root.data==target):
                 ans=self.get(root,0,0)
-                # print(ans)
                 return ans-root.data
             elif(root.data>target):
                 return self.verticallyDownBST(root.left,target)

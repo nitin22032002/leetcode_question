@@ -27,7 +27,6 @@ class Solution:
         else:
             ans=max(ans,j-l-1,r-i)
         return ans
-                
 
 
 #{ 

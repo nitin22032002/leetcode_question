@@ -1,4 +1,5 @@
 #User function Template for python3
+
 class Solution():
     def countZero(self, n, k ,arr):
         total=(n*n)

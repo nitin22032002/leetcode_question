@@ -5,6 +5,7 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
+
 class Solution {
 public:
     int uniquePaths(int n, int m, std::vector<std::vector<int>>& grid) {
@@ -30,7 +31,6 @@ private:
         return dp[i][j];
     }
 };
-
 
 //{ Driver Code Starts.
 

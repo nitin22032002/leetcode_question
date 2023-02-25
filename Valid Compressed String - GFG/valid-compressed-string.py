@@ -17,7 +17,7 @@ class Solution:
                 j+=1
             i+=num
             if(i>len(S)):return 0
-        return int(i==len(S) and j==len(T))
+        return int(i==len(S) and j==len(T)) 
 
 
 #{ 

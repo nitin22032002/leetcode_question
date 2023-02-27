@@ -1,7 +1,6 @@
 
 from typing import Optional
-import sys
-sys.setrecursionlimit(10**7)
+
 """
 
 Definition for singly Link List Node
@@ -40,7 +39,6 @@ class Solution:
             q=t
             k-=1
         return p
-        
         
 
 

@@ -17,7 +17,6 @@ class Solution:
             if(t<=j):
                 prv=(t*a[t])-(r+a[t-1])
                 next=(s-r-a[t-1])-(j-t+1)*a[t]
-                # print(t,prv,next,j)
             while(t<=j and prv+next<=d):
                 r+=a[t-1]
                 d=prv+next
@@ -27,9 +26,9 @@ class Solution:
                 next=(s-r-a[t-1])-(j-t+1)*a[t]
             i=t-1
             ans.append(d)
-            # print(i)
             j+=1
         return ans
+        
 
 
 

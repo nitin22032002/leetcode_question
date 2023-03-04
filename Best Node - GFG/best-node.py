@@ -30,7 +30,6 @@ class Solution:
             else:
                 ans[0]=max(ans[0],-rMin)
             return [rMin,rMax]
-            
         
 
 

@@ -1,16 +1,14 @@
 #User function Template for python3
 
-#User function Template for python3
-
 class Solution:
-    def avoidExlosion(self, chairs,n, passengers,m):
+    def avoidExlosion(self, mix, n, danger, m):
         par=[i for i in range(n+1)]
         rank=[0 for _ in range(n+1)]
         ans=[]
-        for a,b in chairs:
+        for a,b in mix:
             r1=self.find(par,a)
             r2=self.find(par,b)
-            for a1,b1 in passengers:
+            for a1,b1 in danger:
                 p1=self.find(par,a1)
                 p2=self.find(par,b1)
                 if((p1==p2) or (p1==r1 and p2==r2) or (p1==r2 and p2==r1)):
@@ -37,6 +35,7 @@ class Solution:
             return node
         par[node]=self.find(par,par[node])
         return par[node]
+
 
 #{ 
  # Driver Code Starts

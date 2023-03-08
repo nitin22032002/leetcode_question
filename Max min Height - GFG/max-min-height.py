@@ -35,9 +35,7 @@ class Solution():
                     cost+=tem[i]
                     ans+=tem[i]
             i+=1
-        # print(tem,mid)
         return ans
-                
 
 
 #{ 

@@ -40,7 +40,6 @@ class Solution:
         if(r==len(s)):
             ans.append(start)
         return ans
-                
 
 
 #{ 

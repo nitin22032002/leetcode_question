@@ -29,6 +29,7 @@ class Solution:
                     tem[A[i]]=1
             ans.append(c)
         return ans
+        
 
 
 

@@ -1,4 +1,5 @@
 #User function Template for python3
+
 from queue import Queue
 class Solution:
     def shortestXYDist(self, grid, N, M):
@@ -16,7 +17,7 @@ class Solution:
                 if(i1>=0 and i1<N and j1>=0 and j1<M and not visited[i1][j1]):
                     visited[i][j1]=True
                     obj.put([i1,j1,cost+1])
-        return -1
+        return -1 
 
 
 #{ 

@@ -6,17 +6,14 @@
 #User function Template for python3
 class Solution:
     def countSubstring(self, S): 
-        arr=[]
-        for item in S:
-            if(item>='a' and item<='z'):
-                arr.append(1)
-            else:
-                arr.append(-1)
         d={0:1}
         s=0
         ans=0
-        for item in arr:
-            s+=item
+        for item in S:
+            if(item>='a' and item<='z'):
+                s+=1
+            else:
+                s-=1
             if(s in d):
                 ans+=d[s]
                 d[s]+=1

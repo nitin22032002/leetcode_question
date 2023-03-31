@@ -23,7 +23,6 @@ class Solution
             }
             return a;
         }
-        
 };
 
 //{ Driver Code Starts.

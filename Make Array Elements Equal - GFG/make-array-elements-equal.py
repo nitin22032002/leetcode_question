@@ -9,6 +9,8 @@ class Solution:
         else:
             s2=(r*(2*(r+1)+1+(2*(N-1)+1)))//2
         return (s2-s1)//2
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

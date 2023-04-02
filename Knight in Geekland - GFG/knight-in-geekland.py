@@ -1,4 +1,3 @@
-#User function Template for python3
 from collections import deque
 class Solution:
     def knightInGeekland(self, arr, start):
@@ -42,12 +41,7 @@ class Solution:
                 res = i
                 mmax = points[i]
         
-        return res
-                
-    
-
-                
-    
+        return res    
 
 
 #{ 

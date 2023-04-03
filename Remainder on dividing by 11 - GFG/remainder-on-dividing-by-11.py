@@ -10,6 +10,7 @@ class Solution:
             ans%=11
         return ans
 
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

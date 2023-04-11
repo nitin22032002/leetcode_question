@@ -8,7 +8,6 @@ class Solution():
         t2=(b1-c1)
         if(a1>=(t1+t2)*2):return -1
         return r
-        
 
 
 #{ 

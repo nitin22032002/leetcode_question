@@ -18,6 +18,8 @@ class Solution:
         if(a1!=b1):
             return -1
         return a1//2
+        
+
 
 
 #{ 

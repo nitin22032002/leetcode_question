@@ -1,6 +1,6 @@
 #User function Template for python3
 class Solution:
-    def wifiRange(self, N, S, X,rever=True): 
+    def wifiRange(self, N, S, X): 
         count=0
         for i in range(min(X+1,N)):
             if(S[i]=='1'):count+=1
@@ -20,7 +20,6 @@ class Solution:
             j+=1
             k+=1
         return True
-            
 
 
 #{ 

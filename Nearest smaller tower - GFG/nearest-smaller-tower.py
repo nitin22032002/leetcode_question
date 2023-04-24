@@ -37,6 +37,8 @@ class Solution:
             else:
                 ans.append(max(left[i],right[i]))
         return ans
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

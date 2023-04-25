@@ -18,6 +18,7 @@ class Solution:
                 r+=(count+1)//2
             while(i<m and seats[i]==1):i+=1
         return r>=n
+        
 
 
 

@@ -7,11 +7,10 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
+
 class Solution{
 public:
-
-
-vector<vector<int>> chefAndWells(int n, int m, vector<vector<char>>& c) {
+    vector<vector<int>> chefAndWells(int n, int m, vector<vector<char>>& c) {
     queue<pair<int,int>> obj;
     vector<vector<int>> ans(n,vector<int>(m,1e9));
     for (int i = 0; i < n; i++) {

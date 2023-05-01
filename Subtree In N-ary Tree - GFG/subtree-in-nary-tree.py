@@ -32,6 +32,7 @@ class Solution:
             return s
         return "N"
 
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

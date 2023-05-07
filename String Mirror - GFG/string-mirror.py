@@ -1,7 +1,6 @@
 class Solution:
     def stringMirror(self, str : str) -> str:
         i=1
-        not_equal=-1
         while(i<len(str)):
             while(i<len(str) and str[i-1]>str[i]):i+=1
             if(i<len(str) and str[i]==str[i-1]):

@@ -1,6 +1,6 @@
 #User function Template for python3
 class Solution: 
-    def countStrings(self, n):
+    def countStrings(self, n): 
         self.mod=int(1e9+7)
         if(n==1):return 2
         elif(n==2):return 3
@@ -26,6 +26,7 @@ class Solution:
             for j in range(2):
                 ans[i][j]%=self.mod
         return ans
+
 
 
 #{ 

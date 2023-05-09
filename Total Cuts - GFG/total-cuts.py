@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def totalCuts(self, N : int, k : int, A : List[int]) -> int:
         m=[]
@@ -19,6 +20,7 @@ class Solution:
         for i in range(N-1):
             if(m[i]+mr[i+1]>=k):ans+=1
         return ans
+        
 
 
 

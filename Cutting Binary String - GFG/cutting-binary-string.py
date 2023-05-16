@@ -1,5 +1,7 @@
 #User function Template for python3
+
 class Solution:
+
     def cuts(self, s):
         dp=[-1]*len(s)
         ans=self.get(s,0,dp)
@@ -28,8 +30,7 @@ class Solution:
         while(n%p==0):
             n//=p
         return (n==1)
-                    
-                
+
 
 #{ 
  # Driver Code Starts

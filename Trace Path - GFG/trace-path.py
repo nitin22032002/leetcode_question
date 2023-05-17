@@ -24,7 +24,6 @@ class Solution:
                 if(up>0):
                     up-=1
             if(m-right<=left or n-up<=down):
-                # print(left,right,up,down)
                 return 0
         return 1
 

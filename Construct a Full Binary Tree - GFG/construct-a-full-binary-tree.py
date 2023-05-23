@@ -1,4 +1,5 @@
 #User function Template for python3
+
 class Node:
     def __init__(self,val):
         self.data=val
@@ -19,6 +20,8 @@ class Solution:
         root.left=self.get(pre,h-1)
         root.right=self.get(pre,h-1)
         return root
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

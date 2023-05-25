@@ -20,7 +20,7 @@ class Solution:
         res = []
         dfs(0, len(S), '', 0, None, res)
         return res
-            
+
 
 #{ 
  # Driver Code Starts

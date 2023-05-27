@@ -42,7 +42,6 @@ class Solution:
             q=t
         head.next=None
         return p
-            
 
 
 #{ 

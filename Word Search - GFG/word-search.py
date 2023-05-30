@@ -1,6 +1,6 @@
 class Solution:
 	def isWordExist(self, board, word):
-	    for i in range(len(board)):
+		for i in range(len(board)):
 	        for j in range(len(board[0])):
 	            s=self.get(board,i,j,0,word)
 	            if(s):
@@ -24,6 +24,7 @@ class Solution:
                 status=status or self.get(board,i1,j1,k+1,word)
             board[i][j]=word[k]
             return status
+
 
 #{ 
  # Driver Code Starts

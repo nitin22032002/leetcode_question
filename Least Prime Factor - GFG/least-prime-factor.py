@@ -3,13 +3,12 @@ class Solution:
     def leastPrimeFactor (self, n):
         ans=[i for i in range(n+1)]
         for i in range(3,n+1):
-            if(i%2==0):
-                ans[i]=2
+            if(i%2==0):ans[i]=2
             elif(ans[i]==i):
                 for j in range(i,n+1,i):
-                    if(ans[j]==j):
-                        ans[j]=i
+                    if(ans[j]==j):ans[j]=i
         return ans
+
 
 #{ 
  # Driver Code Starts

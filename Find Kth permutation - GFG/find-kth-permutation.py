@@ -5,6 +5,7 @@
 # } Driver Code Ends
 from typing import List
 
+
 from math import ceil
 class Solution:
     def kthPermutation(self, n : int, k : int) -> str:
@@ -30,7 +31,6 @@ class Solution:
                 break
         ans=int("".join(ans))
         return ans
-        
         
 
 

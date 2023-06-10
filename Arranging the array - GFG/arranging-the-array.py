@@ -16,19 +16,6 @@ class Solution:
             arr[i]=item
             i+=1
         
-            
-    def partition(self,arr,start,end):
-        if(start>=end):
-            return
-        else:
-            mid=(start+end)//2
-            self.partition(arr,start,mid)
-            self.partition(arr,mid+1,end)
-            self.merge(self,arr,start,end,mid)
-    
-    # def merge(self,arr,start,end,mid):
-    #     i=start
-        
 
 
 

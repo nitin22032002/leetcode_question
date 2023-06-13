@@ -1,26 +1,23 @@
 #User function Template for python3
 from queue import PriorityQueue
 class Solution:    
-    #Function to find the minimum number of platforms required at the
-    #railway station such that no train waits.
     def minimumPlatform(self,n,arr,dep):
-        arr=list(zip(arr,dep))
-        arr.sort(key=lambda x:x[0])
         obj=PriorityQueue()
+        arr=list(enumerate(arr))
+        arr.sort(key=lambda x:[x[1],dep[x[0]]])
         ans=0
-        for i in range(n):
-            if(obj.qsize()==0):
-                obj.put(arr[i][1])
+        for a,b in arr:
+            if(obj.empty()):
+                obj.put(dep[a])
                 ans+=1
             else:
-                top=obj.get()
-                if(top<arr[i][0]):
-                    obj.put(arr[i][1])
-                else:
-                    obj.put(top)
-                    obj.put(arr[i][1])
+                val=obj.get()
+                if(b<=val):
                     ans+=1
+                    obj.put(val)
+                obj.put(dep[a])
         return ans
+
 
 #{ 
  # Driver Code Starts

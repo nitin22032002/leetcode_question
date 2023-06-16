@@ -9,7 +9,6 @@ class Solution:
                 d[types[i]]=[min(d[types[i]][0],locations[i]),max(d[types[i]][1],locations[i])]
             else:
                 d[types[i]]=[locations[i],locations[i]]
-        # print(d)
         dp=[[0,0] for _ in range(len(d))]
         m1=min(d)
         m2=max(d)
@@ -25,7 +24,6 @@ class Solution:
                 j+=1
         dp[j-1][0]+=abs(d[prv][1])
         dp[j-1][1]+=abs(d[prv][0])
-        # print(dp)
         return min(dp[j-1])
         
 

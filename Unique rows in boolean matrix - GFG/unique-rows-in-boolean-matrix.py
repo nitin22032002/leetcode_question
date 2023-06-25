@@ -12,6 +12,8 @@ class Solution:
                 ans.append(matrix[i])
                 r.add(num)
         return ans
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

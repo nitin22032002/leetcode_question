@@ -16,8 +16,6 @@ class Solution:
             x%=(int(1e9+7))
             dp[(n,r)]=x
             return x
-        
-        
 
 
 #{ 

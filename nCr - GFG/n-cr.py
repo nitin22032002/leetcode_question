@@ -2,16 +2,22 @@
 
 class Solution:
     def nCr(self, n, r):
-        dp=[[0 for _ in range(r+1)] for __ in range(n+1)]
-        mod=((10**9)+7)
-        for i in range(n+1):
-            dp[i][0]=1
-        for i in range(1,r+1):
-            for j in range(0,n+1):
-                if(j<i):
-                    continue
-                dp[j][i]=(dp[j-1][i-1]+dp[j-1][i])%mod
-        return dp[n][r]
+        r=min(r,n-r)
+        return self.get(n,r,{})
+    def get(self,n,r,dp):
+        if(r>n or r<0):
+            return 0
+        elif(r==0 or r==n):
+            return 1
+        elif((n,r) in dp):
+            return dp[(n,r)]
+        else:
+            x=self.get(n-1,r,dp)+self.get(n-1,r-1,dp)
+            x%=(int(1e9+7))
+            dp[(n,r)]=x
+            return x
+        
+        
 
 
 #{ 

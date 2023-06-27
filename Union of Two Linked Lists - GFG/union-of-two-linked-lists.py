@@ -21,7 +21,7 @@ class Solution:
                 t.next=node
             t=node
         return ans
-                
+
 
 
 

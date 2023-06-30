@@ -1,7 +1,7 @@
 #User function Template for python3
 class Solution:
 	def isDivisible(self, s):
-	    ans=0
+		ans=0
 		for i in range(len(s)-1,-1,-1):
 		    if(s[i]=='1'):
 		        if((len(s)-i-1)%2==0):

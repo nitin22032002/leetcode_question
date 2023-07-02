@@ -7,6 +7,7 @@ class Solution:
                 x|=(1<<i)
         return x
 
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

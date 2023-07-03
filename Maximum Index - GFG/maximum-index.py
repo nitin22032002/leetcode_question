@@ -2,7 +2,7 @@
 class Solution:
 
 	def maxIndexDiff(self,arr,n):
-	    stack=[]
+		stack=[]
 	    for i in range(n):
 	        if(len(stack)==0 or arr[stack[-1]]>arr[i]):
 	            stack.append(i)

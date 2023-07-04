@@ -8,14 +8,12 @@ class Solution:
         while(j<n):
             product*=a[j]
             if(product>=k):
-                # print((i,j))
                 t=i
                 while(i<=j and product>=k):
                     product//=a[i]
                     i+=1
                 r1=(min(i,j)-t)
                 r2=(j-min(i,j))
-                # print(r1,r2,(t,j))
                 ans+=((r1)*(r1+1))//2
                 ans+=(r1*r2)
             j+=1
@@ -24,7 +22,6 @@ class Solution:
             i+=1
         ans+=((j-i)*(j-i+1))//2
         return ans
-        
     
     
     

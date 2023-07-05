@@ -11,6 +11,7 @@ class Solution:
                 ans+=(item-start)
             start=item
         return ans
+        
 
 
 

@@ -1,6 +1,8 @@
 #User function Template for python3
-from math import ceil
+
 class Solution:
+    
+    #Function to merge the arrays.
     def merge(self,arr1,arr2,n,m):
         self.get(arr1,arr2)
     def get(self,arr1,arr2):
@@ -15,7 +17,6 @@ class Solution:
                 j+=1
         arr1.sort()
         arr2.sort()
-        
     
 
 

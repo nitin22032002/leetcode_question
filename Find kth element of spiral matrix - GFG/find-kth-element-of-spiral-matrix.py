@@ -30,7 +30,6 @@ class Solution:
             endC-=1
             endR-=1
         return -1
-                
 
 
 #{ 

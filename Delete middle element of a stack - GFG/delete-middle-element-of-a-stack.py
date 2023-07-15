@@ -14,6 +14,7 @@ class Solution:
             self.get(s,middle-1)
             s.append(val)
 
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

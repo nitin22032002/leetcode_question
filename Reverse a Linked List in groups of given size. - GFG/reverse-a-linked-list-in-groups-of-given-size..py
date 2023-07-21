@@ -36,6 +36,7 @@ class Solution:
             p=q
             k-=1
         return t,p
+        
 
 
 #{ 

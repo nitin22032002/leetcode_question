@@ -1,4 +1,5 @@
 #User function Template for python3
+
 from queue import Queue
 class Solution:
     def shortestDistance(self,N,M,A,X,Y):

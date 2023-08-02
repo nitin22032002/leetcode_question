@@ -3,26 +3,22 @@ from queue import Queue
 class Solution:
     def shortestDistance(self,N,M,A,X,Y):
         obj=Queue()
-	    visited=[[-1 for _ in range(M)] for __ in range(N)]
-	    obj.put([0,0,0])
-	    visited[0][0]=0
-	    if(A[0][0]==0 or A[X][Y]==0):return -1
-	    while(not obj.empty()):
-	        cost,i,j=obj.get()
-	        if(i==X and j==Y):
-	            return cost
-	        else:
-	            for i1,j1 in [[i,j-1],[i,j+1],[i-1,j],[i+1,j]]:
-	                if(i1>=0 and i1<N and j1>=0 and j1<M and A[i1][j1]==1):
-	                    if(visited[i1][j1]==-1 or visited[i1][j1]>1+cost):
-	                        visited[i1][j1]=1+cost
-	                        obj.put([visited[i1][j1],i1,j1])
-	        
-	    return -1
+        visited=[[False for _ in range(M)] for __ in range(N)]
+        visited[0][0]=True
+        obj.put([0,0,0])
+        while(not obj.empty()):
+            i,j,cost=obj.get()
+            if(i==X and j==Y):return cost
+            for i1,j1 in [[i+1,j],[i-1,j],[i,j+1],[i,j-1]]:
+                if(i1>=0 and i1<N and j1>=0 and j1<M and not visited[i1][j1] and A[i1][j1]==1):
+                    visited[i1][j1]=True
+                    obj.put([i1,j1,cost+1])
+        return -1
 
 
 #{ 
  # Driver Code Starts
+
 #Initial Template for Python 3
 
 import math

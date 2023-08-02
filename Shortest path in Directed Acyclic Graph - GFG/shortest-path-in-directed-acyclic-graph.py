@@ -1,6 +1,7 @@
 #User function Template for python3
 
 from typing import List
+
 from queue import PriorityQueue
 class Solution:
     def shortestPath(self, n : int, m : int, edges : List[List[int]]) -> List[int]:
@@ -18,7 +19,6 @@ class Solution:
                     visited[a]=cost+b
                     obj.put([cost+b,a])
         return visited
-        
 
 
 #{ 

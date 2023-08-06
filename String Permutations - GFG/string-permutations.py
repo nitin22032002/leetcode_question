@@ -15,7 +15,6 @@ class Solution:
                 s[i],s[j]=s[j],s[i]
                 self.get(s,i+1,ans)
                 s[i],s[j]=s[j],s[i]
-        
 
 
 #{ 

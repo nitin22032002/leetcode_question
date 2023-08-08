@@ -1,4 +1,5 @@
 #User function Template for python3
+
 from math import gcd
 class Solution:
     def countFractions(self, n, numerator, denominator):
@@ -21,7 +22,6 @@ class Solution:
                 elif(p1!=item):
                     ans+=(val*(d[item]))
         return ans//2
-                    
 
 
 #{ 

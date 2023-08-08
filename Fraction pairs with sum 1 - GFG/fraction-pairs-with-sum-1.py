@@ -4,24 +4,19 @@ from math import gcd
 class Solution:
     def countFractions(self, n, numerator, denominator):
         d={}
+        ans=0
         for i in range(n):
             val=gcd(numerator[i],denominator[i])
             p=(numerator[i]//val,denominator[i]//val)
+            a,b=p
+            p1=(b-a,b)
+            if(p1 in d):
+                ans+=d[p1]
             if(p in d):
                 d[p]+=1
             else:
                 d[p]=1
-        ans=0
-        for item in d:
-            a,b=item
-            p1=(b-a,b)
-            if(p1 in d):
-                val=d[p1]
-                if(p1==item):
-                    ans+=(val*(val-1))
-                elif(p1!=item):
-                    ans+=(val*(d[item]))
-        return ans//2
+        return ans
 
 
 #{ 

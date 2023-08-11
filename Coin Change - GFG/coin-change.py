@@ -4,11 +4,11 @@ class Solution:
     def count(self, coins, N, Sum):
         dp=[0 for _ in range(Sum+1)]
         dp[0]=1
-        for item in coins:
-            for i in range(item,Sum+1):
-                dp[i]+=(dp[i-item])
-        return dp[Sum]
-
+        coins.sort()
+        for i in range(len(coins)):
+            for j in range(coins[i],Sum+1):
+                dp[j]+=dp[j-coins[i]]
+        return dp[-1]
 
 
 #{ 

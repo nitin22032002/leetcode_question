@@ -1,4 +1,5 @@
 #User function Template for python3
+
 from bisect import bisect_left
 class Solution:
     

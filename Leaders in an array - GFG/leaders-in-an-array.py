@@ -15,7 +15,6 @@ class Solution:
                     max_ele=A[i]
         ans.reverse()
         return ans
-            
 
 
 #{ 

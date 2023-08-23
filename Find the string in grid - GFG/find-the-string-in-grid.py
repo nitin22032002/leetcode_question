@@ -25,8 +25,6 @@ class Solution:
     	    if(k==len(word)):
     	        return True
 	    return False
-	    
-	        
 
 
 #{ 

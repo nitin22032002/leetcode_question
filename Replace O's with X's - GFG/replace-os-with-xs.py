@@ -23,7 +23,6 @@ class Solution:
             mat[i][j]="-1"
             for i1,j1 in [[i+1,j],[i,j-1],[i,j+1],[i-1,j]]:
                 self.get(mat,i1,j1)
-                
 
 
 #{ 

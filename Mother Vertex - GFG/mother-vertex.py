@@ -3,7 +3,7 @@ class Solution:
     
     #Function to find a Mother Vertex in the Graph.
 	def findMotherVertex(self, V, adj):
-	    visited=[False]*V
+		visited=[False]*V
 	    for i in range(V):
 	        if(visited[i]==False):
 	            self.get(adj,i,visited)

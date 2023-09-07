@@ -1,6 +1,7 @@
 #User function Template for python3
 
 from typing import List
+ 
 from queue import Queue
 class Solution:
     
@@ -18,8 +19,7 @@ class Solution:
                 if(not visited[val]):
                     obj.put([val,cost+1])
                     visited[val]=True
-        return -1
-        
+        return -1        
 
 
 #{ 

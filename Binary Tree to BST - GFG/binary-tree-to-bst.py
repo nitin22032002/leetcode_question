@@ -27,6 +27,8 @@ class Solution:
             self.set(root.left,ans)
             root.data=ans.pop()
             self.set(root.right,ans)
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

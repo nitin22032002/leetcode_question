@@ -21,7 +21,6 @@ class Solution:
                 ans[1]=root.data
             else:
                 self.get(root.left,ans)
-        
 
 
 #{ 

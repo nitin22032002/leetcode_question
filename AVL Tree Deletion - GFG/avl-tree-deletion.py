@@ -10,114 +10,94 @@ class Node:
         self.height=1
 
 '''
+def max_height(root):
+    height = 0
+    if root.left:
+        height = root.left.height
+    if root.right and height < root.right.height:
+        height = root.right.height
+    return height
 
-def getHeight(n):
-    if n is None:
-        return 0
-    return n.height
+def get_balance(root):
+    cost = 0
+    if root.left:
+        cost += root.left.height
+    if root.right:
+        cost -= root.right.height
+    return cost
 
-def getBalance(n):
-    return getHeight(n.left) - getHeight(n.right)
-
-def leftRotate(z): 
-    
-    y = z.right 
-    T2 = y.left 
-    
-    # Perform rotation 
-    y.left = z 
-    z.right = T2 
-    
-    # Update heights 
-    z.height = 1 + max(getHeight(z.left), getHeight(z.right)) 
-    y.height = 1 + max(getHeight(y.left), getHeight(y.right)) 
-    
-    # Return the new root 
-    return y
-
-def rightRotate(z): 
-    
-    y = z.left 
-    T3 = y.right 
-    
-    # Perform rotation 
-    y.right = z 
-    z.left = T3 
-    
-    # Update heights 
-    z.height = 1 + max(getHeight(z.left), getHeight(z.right)) 
-    y.height = 1 + max(getHeight(y.left), getHeight(y.right)) 
-    
-    # Return the new root 
-    return y
-
-def deleteNode(root, key):
-    if root is None:
-        return None
-    
-    # step 1: searching for key:
-    if root.data > key:
-        root.left = deleteNode(root.left, key)
-    
-    elif root.data < key:
-        root.right = deleteNode(root.right, key)
-    
-    # step 2 : deleting key, if found:
-    else:
-        if root.left is None:
-            return root.right
-        
-        if root.right is None:
-            return root.left
-        
-        if root.right.left is None:
-            root.right.left = root.left
-            root = root.right
-            # balancing might be needed in this case
-        
+def update(root, value):
+    if value:
+        if not root:
+            return value
+        elif root.data > value.data:
+            root.left = update(root.left, value)
         else:
-            # finding next smallest node:
-            parent = root.right
-            nxt = parent.left
-            while nxt.left:
-                parent = nxt
-                nxt = nxt.left
-        
-            # swapping key with this node
-            parent.left = nxt.right
-            nxt.right , nxt.left = root.right , root.left
-            root = nxt
-            
-            # now, traversing downwards to balance the tree
-            # from bottom up
-            root.right = deleteNode(root.right, key)
-    
-    # step 3: balancing current node
-    balance = getBalance(root)
-    
-    if balance < -1:
-        
-        # case 1
-        if getBalance(root.right) < 1:
-            return leftRotate(root)
-        
-        # case 2
-        root.right = rightRotate(root.right)
-        return leftRotate(root)
-    
-    if balance > 1:
-        
-        # case 3
-        if getBalance(root.left) > -1:
-            return rightRotate(root)
-        
-        # case 4
-        root.left = leftRotate(root.left)
-        return rightRotate(root)
-    
-    root.height = 1 + max( getHeight(root.left) , getHeight(root.right) )
+            root.right = update(root.right, value)
+    root.height = 1 + max_height(root)
     return root
 
+def left_rotate(root):
+    if not root.right:
+        return None
+    else:
+        temp = root.right.left
+        temp2 = root.right
+        root.right.left = root
+        root.right = None
+        root.height = 1 + max_height(root)
+        update(temp2, temp)
+        return temp2
+
+def right_rotate(root):
+    if not root.left:
+        return None
+    else:
+        temp = root.left.right
+        temp2 = root.left
+        root.left.right = root
+        root.left = None
+        root.height = 1 + max_height(root)
+        update(temp2, temp)
+        return temp2
+
+def deleteNode(root, data):
+    if not root:
+        return None
+    elif root.data == data:
+        if root.right and root.left:
+            temp = root.right
+            while temp.left:
+                temp = temp.left
+            root.data = temp.data
+            root.right = deleteNode(root.right, temp.data)
+        elif root.right:
+            temp = root.right
+            del root
+            return temp
+        else:
+            temp = root.left
+            del root
+            return temp
+    elif root.data > data:
+        root.left = deleteNode(root.left, data)
+    else:
+        root.right = deleteNode(root.right, data)
+    root.height = 1 + max_height(root)
+    cost = get_balance(root)
+    if cost > 1:
+        if get_balance(root.left) >= 0:
+            root = right_rotate(root)
+        else:
+            root.left = left_rotate(root.left)
+            root = right_rotate(root)
+    elif cost < -1:
+        if get_balance(root.right) <= 0:
+            root = left_rotate(root)
+        else:
+            root.right = right_rotate(root.right)
+            root = left_rotate(root)
+    return root
 
 
 #{ 

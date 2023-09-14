@@ -1,7 +1,7 @@
 #User function Template for python3
 class Solution:
 	def perfectSum(self, arr, n, sum):
-	    return self.get(arr,sum,0,{})
+		return self.get(arr,sum,0,{})
     def get(self,arr,s,i,dp):
         if(i>=len(arr) or s<0):
             if(s==0):return 1

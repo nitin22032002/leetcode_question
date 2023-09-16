@@ -12,8 +12,6 @@ class Solution:
             val%=mod
             arr[0],arr[1],arr[2]=arr[1],arr[2],val
         return arr[-1]
-                
-            
 
 
 #{ 

@@ -7,6 +7,7 @@ class Solution:
         right=((N<<D)|(N>>(16-D)))&((1<<16)-1)
         return [right,left]
 
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

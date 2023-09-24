@@ -1,6 +1,6 @@
 class Solution:
     def duplicates(self, arr, n): 
-        d={}
+    	d={}
         for item in arr:
             if(item in d):d[item]+=1
             else:d[item]=1

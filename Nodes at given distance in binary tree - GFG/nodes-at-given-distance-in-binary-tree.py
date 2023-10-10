@@ -47,7 +47,6 @@ class Solution:
             self.findKDis(root.right,k-1,ans)
         return 
 
-
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3

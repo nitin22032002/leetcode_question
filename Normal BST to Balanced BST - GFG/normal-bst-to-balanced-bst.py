@@ -18,7 +18,6 @@ class Solution:
             root.left=self.balanceBst(arr,start,mid-1)
             root.right=self.balanceBst(arr,mid+1,end)
             return root
-        
 
 
 #{ 

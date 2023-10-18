@@ -4,7 +4,6 @@ from typing import List
 
 class Solution:    
     def eventualSafeNodes(self, V : int, adj : List[List[int]]) -> List[int]:
-        
         visited=[False]*V
         isSafe=[False]*V
         ans=[]

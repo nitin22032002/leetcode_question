@@ -9,7 +9,7 @@ class Solution:
             else:
                 n-=1
             ans+=1
-        return ans
+        return ans 
 
 
 #{ 

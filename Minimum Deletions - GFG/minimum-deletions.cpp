@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution{
   public:
-    int minimumNumberOfDeletions(string S) { 
+   int minimumNumberOfDeletions(string S) { 
         vector<vector<int>> dp(S.size(),vector<int>(S.size(),-1));
         return get(S,0,S.size()-1,dp);
     }

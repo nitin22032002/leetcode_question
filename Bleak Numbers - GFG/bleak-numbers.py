@@ -2,7 +2,7 @@
 
 class Solution:
 	def is_bleak(self, n):
-		bits=self.bits(n)
+	    bits=self.bits(n)
 		for i in range(bits+1):
 		    if(self.set_bit(n-i)==i):
 		        return 0

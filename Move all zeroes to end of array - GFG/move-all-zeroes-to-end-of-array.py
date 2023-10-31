@@ -2,7 +2,7 @@
 
 class Solution:
 	def pushZerosToEnd(self,arr, n):
-    	i=j=0
+	    i=j=0
     	while(i<len(arr)):
     	    if(arr[i]==0):
     	        while(j<n and arr[j]==0):j+=1
@@ -10,7 +10,6 @@ class Solution:
     	            arr[i],arr[j]=arr[j],arr[i]
     	    i+=1
     	    j+=1
-    	
 
 
 #{ 
